@@ -44,4 +44,8 @@ const result = config
   .get()
 
 // expect the type of result to be:
-console.log(result)
+
+type Chainable_2<Option extends object = {} >= {
+  option<K extends string, V>(key:K extends keyof Option ? never: K, value: V): Chainable_2 & {[Key in K]: V},
+  get(): {[K in keyof Option]: Option[K]}
+}
