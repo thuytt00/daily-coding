@@ -54,3 +54,4 @@ const todoWithReadOnly: NewTypeReadOnly = {
 	},
 	y: 'hey'
 };
+

@@ -20,7 +20,7 @@ type Pop<T extends any[]> = T extends []
 	: never;
 type arrPop1 = ['a', 'b', 'c', 'd'];
 
-type re1 = Pop<arr1>; // expected to be ['a', 'b', 'c']
+type re1 = Pop<arrPop1>; // expected to be ['a', 'b', 'c']
 
 type Shift<T extends any[]> = T extends []
 	? never
@@ -36,4 +36,14 @@ type resPush = Push<arrPop1, 'a'>;
 
 type resPush2 = Push<[], 'h'>;
 
+/*
 
+Implement the type version of Array.unshift
+
+For example:
+
+type Result = Unshift<[1, 2], 0> // [0, 1, 2,]
+*/
+
+type Unshift<T extends any[], F> = [F, ...T];
+type UnshiftResult = Unshift<[1,3], 'c'>
